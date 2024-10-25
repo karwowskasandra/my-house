@@ -14,8 +14,9 @@ public class Picture
     private Square wall;
     private Square window;
     private Triangle roof;
+    private Square garden;
     private Circle sun;
-
+    private Circle moon;
     /**
      * Constructor for objects of class Picture
      */
@@ -47,18 +48,34 @@ public class Picture
         roof.moveHorizontal(20);
         roof.moveVertical(-60);
         roof.makeVisible();
-
+        
+        
+        garden = new Square();
+        garden.makeVisible();
+        garden.changeColor("green");
+        garden.moveVertical(140);
+        garden.moveHorizontal(-320);
+        garden.changeSize(2300);
+        
+        
         sun = new Circle();
         sun.changeColor("yellow");
         sun.moveHorizontal(100);
-        sun.moveVertical(-40);
+        sun.moveVertical(-80);
         sun.changeSize(80);
         sun.makeVisible();
+        sun.slowMoveVertical(320);
+        
+        
+        moon = new Circle();
+        moon.makeVisible();
+        moon.changeColor("magenta");
+        moon.changeSize(40);
+        moon.moveHorizontal(-150);
+        
+        
     }
-
-    /**
-     * Change this picture to black/white display
-     */
+    
     public void setBlackAndWhite()
     {
         if (wall != null)   // only if it's painted already...
