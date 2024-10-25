@@ -14,6 +14,7 @@ public class Picture
     private Square wall;
     private Square window;
     private Triangle roof;
+    private Square garden;
     private Circle sun;
     private Circle moon;
     /**
@@ -47,13 +48,23 @@ public class Picture
         roof.moveHorizontal(20);
         roof.moveVertical(-60);
         roof.makeVisible();
+        
+        
+        garden = new Square();
+        garden.changeColor("green");
+        garden.makeVisible();
+        garden.moveVertical(140);
+        garden.moveHorizontal(-1200);
+        garden.changeSize(1800);
+        
 
         sun = new Circle();
         sun.changeColor("yellow");
         sun.moveHorizontal(100);
-        sun.moveVertical(-40);
+        sun.moveVertical(-90);
         sun.changeSize(80);
         sun.makeVisible();
+        sun.slowMoveVertical(300);
         
         
         moon = new Circle();
