@@ -17,7 +17,8 @@ public class Picture
     private Square garden;
     private Circle sun;
     private Circle moon;
-    private Circle amanecer;
+    private Person persona;
+    private Person muñeco;
     /**
      * Constructor for objects of class Picture
      */
@@ -73,15 +74,6 @@ public class Picture
         moon.changeColor("magenta");
         moon.changeSize(40);
         moon.moveHorizontal(-150);
-        moon.slowMoveVertical(210);
-        
-        
-        amanecer= new Circle();
-        amanecer.makeVisible();
-        amanecer.changeColor("yellow");
-        amanecer.moveVertical(320);
-        amanecer.moveHorizontal(100);
-        amanecer.slowMoveVertical(-400);
         
         
     }
@@ -109,5 +101,61 @@ public class Picture
             roof.changeColor("green");
             sun.changeColor("yellow");
         }
+    }
+    
+    /**
+     * Draw this picture.
+     */
+    public void amanecer()
+    {
+        wall = new Square();
+        wall.moveHorizontal(-140);
+        wall.moveVertical(20);
+        wall.changeSize(120);
+        wall.makeVisible();
+        
+        window = new Square();
+        window.changeColor("black");
+        window.moveHorizontal(-120);
+        window.moveVertical(40);
+        window.changeSize(40);
+        window.makeVisible();
+
+        roof = new Triangle();  
+        roof.changeSize(60, 180);
+        roof.moveHorizontal(20);
+        roof.moveVertical(-60);
+        roof.makeVisible();
+        
+        
+        garden = new Square();
+        garden.makeVisible();
+        garden.changeColor("green");
+        garden.moveVertical(140);
+        garden.moveHorizontal(-320);
+        garden.changeSize(2300);
+        
+        
+        moon.makeInvisible();
+        sun = new Circle();
+        sun.changeColor("yellow");
+        sun.moveHorizontal(100);
+        sun.changeSize(80);
+        sun.makeVisible();
+        sun.moveVertical(210);
+        sun.slowMoveVertical(-270);
+        
+        
+        persona = new Person();
+        persona.makeVisible();
+        persona.moveHorizontal(200);
+        persona.slowMoveHorizontal(-170);
+        muñeco = new Person();
+        muñeco.makeVisible();
+        muñeco.moveHorizontal(-230);
+        muñeco.slowMoveHorizontal(100);
+        
+        
+        
     }
 }
